@@ -1,0 +1,17 @@
+﻿@model MyProject.ViewModels.CreatePostViewModel
+<h2>Create a post</h2>
+<form method="post" asp-controller="User" asp-action="CreatePost" enctype="multipart/form-data">
+    <div>
+
+        <input name="Title" class="form-control" asp-for="Title"/>
+    </div>
+    <div>
+        <input name="Description" class="form-control" asp-for="Description"/>
+    </div>
+    <div>
+        <input type="file" name="Photo" class="form-control" accept="image/*" asp-for="Photo"/>
+    </div>
+    <div>
+        <input type="submit" value="Создать пост" />
+    </div>
+</form>

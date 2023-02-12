@@ -1,0 +1,26 @@
+﻿@model ICollection<MyProject.Models.Post>
+<h2>My Posts</h2>
+<table class="table">
+    <tr>
+        <td> </td>
+        <td>Time</td>
+        <td>Title</td>
+        <td>Description</td>
+        <td>Photo</td>
+    </tr>
+    @{
+
+        if (Model != null ) {
+        foreach (var post in Model)
+        {
+            <tr>
+                <td><input type="checkbox" name="id" id="@post.Id" value="@post.Id" class="two" data-id="d21"/></td>
+                <td>@post.RegisterTime</td>
+                <td>@post.Title</td>
+                <td>@post.Description</td>
+                <td><img style='width: 50%; height: 50%;' src="data:image/jpeg;base64,@(Convert.ToBase64String(post.Photo))" /></td>
+            </tr>
+        }
+        }
+    }
+</table>
